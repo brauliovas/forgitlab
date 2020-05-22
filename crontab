@@ -1,0 +1,3 @@
+HOME=/var/log/
+SHELL=/bin/bash
+0 * * * * ([ -e $HOME/current_users  ] && echo $(cat current_users)>$HOME/oldhash && $HOME/script && [ $(cat current_users) != $(cat oldhash) ] && rm -f $HOME/oldhash &&  echo `date` "File changed" >> $HOME/user_changes) || $HOME/script
