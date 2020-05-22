@@ -1,2 +1,4 @@
+#!/bin/bash
+#Takes username and home folder - generate md5hash and limits the output to 32 characters
 grep -v nologin /etc/passwd | cut -d: -f1,6 | md5sum | cut -c1-31  >/var/log/current_users
 
